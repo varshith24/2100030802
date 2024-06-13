@@ -25,7 +25,7 @@ const initializeToken = async () => {
 
 initializeToken()
 
-app.get("/test/:id", async (req, res) => {
+app.get("/numbers/:id", async (req, res) => {
     const id = req.params.id;
 
     if (!token) {
