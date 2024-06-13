@@ -47,7 +47,7 @@ app.get("/test/:id", async (req, res) => {
         const avg = s / response.data.numbers.length;
 
         console.log(response.data);
-        res.status(200).json({ "windowPrevState": previousRequests.length == 0 ? [] : previousRequests[previousRequests.length - 1], "windowCurrState": response.data, "avg": avg });
+        res.status(200).json({ "windowPrevState": previousRequests.length == 0 ? [] : previousRequests[previousRequests.length - 1], "windowCurrState": response.data.numbers, "avg": avg });
         previousRequests.push(response.data.numbers)
     } catch (e) {
         console.error('Error:', e.message || e);
